@@ -5,6 +5,9 @@ import java.util.Scanner;
 /**
  * DTO for {@link csd214.bookstore.entities.VehicleEntity}
  */
+/**
+ * DTO for {@link csd214.bookstore.entities.VehicleEntity}
+ */
 public class Vehicle extends Product {
     private String make;
     private String model;

@@ -6,6 +6,9 @@ import java.util.Scanner;
 /**
  * DTO for {@link csd214.bookstore.entities.TruckEntity}
  */
+/**
+ * DTO for {@link csd214.bookstore.entities.TruckEntity}
+ */
 public class Truck extends Vehicle {
     private double towingCapacity;
 

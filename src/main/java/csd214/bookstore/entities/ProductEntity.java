@@ -68,6 +68,6 @@ public abstract class ProductEntity {
                 ", productId='" + productId + '\'' +
                 ", price=" + price +
                 ", name='" + name + '\'' +
-                '}';
+                '}' + super.toString();
     }
 }

@@ -19,13 +19,13 @@ public class JpaBookApp {
         book.setPrice(34.99);
         book.setCopies(10);
         book.setAuthor("Maria Batista");
-        em.persist(book);
+        em.persist(book); // Hibernate generates the INSERT SQL for you instantly
         em.getTransaction().commit();
 
         // 3. Read Data (Polymorphic check)
-        // Notice we can query specifically for Widgets
+        // Notice we can query specifically for Books
         List<BookEntity> books = em.createQuery(
-                "SELECT w FROM BookEntity w", BookEntity.class).getResultList();
+                "SELECT b FROM BookEntity b", BookEntity.class).getResultList();
 
         for (BookEntity b : books) {
             System.out.println("Found: " + b);
