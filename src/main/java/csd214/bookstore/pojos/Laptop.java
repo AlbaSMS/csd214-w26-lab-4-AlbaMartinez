@@ -4,6 +4,12 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.UUID;
 
+/**
+ * DTO for {@link csd214.bookstore.entities.LaptopEntity}
+ */
+/**
+ * DTO for {@link csd214.bookstore.entities.LaptopEntity}
+ */
 public class Laptop extends Electronics {
     private double screenSizeInches;
     private double price;

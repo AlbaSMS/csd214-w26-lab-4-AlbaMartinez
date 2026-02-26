@@ -85,6 +85,8 @@ public class App {
         System.out.println("4. Ticket");
         System.out.println("5. Pen");
         System.out.println("6. Notebook");
+        System.out.println("7. Laptop");
+        System.out.println("8. Phone");
         System.out.println("99. Back");
 
         int choice = getIntInput();
@@ -158,6 +160,28 @@ public class App {
                     nEnt.setName(nPojo.getPageCount() + "pg " + nPojo.getBrand() + " Notebook");
                     em.persist(nEnt);
                     break;
+                case 7:
+                    Laptop lPojo = new Laptop();
+                    lPojo.initialize(input);
+                    LaptopEntity lEnt = new LaptopEntity();
+                    lEnt.setBrand(lPojo.getBrand());
+                    lEnt.setPrice(lPojo.getPrice());
+                    lEnt.setScreenSizeInches(lPojo.getScreenSizeInches());
+                    lEnt.setCopies(lPojo.getCopies());
+                    lEnt.setName(lPojo.getScreenSizeInches() + "inches " + lPojo.getBrand() + " Laptop");
+                    em.persist(lEnt);
+                    break;
+                case 8:
+                    Phone phPojo = new Phone();
+                    phPojo.initialize(input);
+                    PhoneEntity phEnt = new PhoneEntity();
+                    phEnt.setBrand(phPojo.getBrand());
+                    phEnt.setPrice(phPojo.getPrice());
+                    phEnt.setSupports5G(phPojo.isSupports5G());
+                    phEnt.setCopies(phPojo.getCopies());
+                    phEnt.setName("supports 5G? " + phPojo.isSupports5G() + phPojo.getBrand() + " Phone");
+                    em.persist(phEnt);
+                    break;
                 default:
                     System.out.println("Invalid type.");
             }
@@ -224,6 +248,23 @@ public class App {
                 pe.setBrand(pojo.getBrand());
                 pe.setPrice(pojo.getPrice());
                 pe.setColor(pojo.getColor());
+            }
+            else if (entity instanceof LaptopEntity) {
+                LaptopEntity la = (LaptopEntity) entity;
+                Laptop pojo = new Laptop(la.getBrand(), la.getScreenSizeInches(), la.getWarrantyMonths());
+                pojo.edit(input);
+                la.setBrand(pojo.getBrand());
+                la.setScreenSizeInches(pojo.getScreenSizeInches());
+                la.setWarrantyMonths(pojo.getWarrantyMonths());
+            }
+            else if (entity instanceof PhoneEntity) {
+                PhoneEntity ph = (PhoneEntity) entity;
+                Phone pojo = new Phone(ph.getBrand(), ph.getSupports5G(), ph.getPrice(), ph.getCopies());
+                pojo.edit(input);
+                ph.setBrand(pojo.getBrand());
+                ph.setSupports5G(pojo.isSupports5G());
+                ph.setPrice(pojo.getPrice());
+                ph.setCopies(pojo.getCopies());
             }
             // ... (Other types would follow similar pattern) ...
             else {

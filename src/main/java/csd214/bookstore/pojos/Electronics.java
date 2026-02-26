@@ -3,6 +3,9 @@ package csd214.bookstore.pojos;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * DTO for {@link csd214.bookstore.entities.ElectronicsEntity}
+ */
 public abstract class Electronics extends Product {
     private int warrantyMonths = 12;
     private String brand;

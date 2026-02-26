@@ -4,6 +4,12 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.UUID;
 
+/**
+ * DTO for {@link csd214.bookstore.entities.PhoneEntity}
+ */
+/**
+ * DTO for {@link csd214.bookstore.entities.PhoneEntity}
+ */
 public class Phone extends Electronics {
     private boolean supports5G;
     public double price;
