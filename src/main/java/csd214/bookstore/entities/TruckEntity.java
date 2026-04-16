@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 public class TruckEntity extends VehicleEntity {
-    @Column(name = "towing_capacity", nullable = false)
+    @Column(name = "towing_capacity", nullable = true)
     private double towingCapacity;
 
     public TruckEntity() {

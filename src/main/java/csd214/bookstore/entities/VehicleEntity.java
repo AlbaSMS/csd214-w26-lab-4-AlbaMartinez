@@ -13,10 +13,10 @@ public class VehicleEntity extends ProductEntity {
     @Column(name = "model")
     private String model;
 
-    @Column(name = "year", nullable = false)
+    @Column(name = "year", nullable = true)
     private int year;
 
-    @Column(name = "mileage", nullable = false)
+    @Column(name = "mileage", nullable = true)
     private int mileage;
 
     public VehicleEntity() {}

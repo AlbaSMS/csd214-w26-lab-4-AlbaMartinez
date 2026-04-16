@@ -7,13 +7,13 @@ import java.util.Objects;
 
 @Entity
 public class ElectronicsEntity extends ProductEntity {
-    @Column(name = "warranty_months", nullable = false)
+    @Column(name = "warranty_months", nullable = true)
     private int warrantyMonths;
 
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "copies", nullable = false)
+    @Column(name = "copies", nullable = true)
     private int copies;
 
     public ElectronicsEntity() { }
@@ -70,7 +70,8 @@ public class ElectronicsEntity extends ProductEntity {
 
     @Override
     public String toString() {
-        return "ElectronicsEntity{" +
+        return super.toString() +
+                "ElectronicsEntity{" +
                 "warrantyMonths=" + warrantyMonths +
                 ", brand='" + brand + '\'' +
                 ", copies=" + copies +

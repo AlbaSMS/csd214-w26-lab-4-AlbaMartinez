@@ -9,7 +9,7 @@ import java.util.Objects;
 @Entity
 @DiscriminatorValue("PHONE")
 public class PhoneEntity extends ElectronicsEntity {
-    @Column(name = "supports_5_g", nullable = false)
+    @Column(name = "supports_5_g", nullable = true)
     private boolean supports5G;
 
     @Column(name = "price", nullable = false)
@@ -54,7 +54,8 @@ public class PhoneEntity extends ElectronicsEntity {
 
     @Override
     public String toString() {
-        return "PhoneEntity{" +
+        return super.toString() +
+                "PhoneEntity{" +
                 "supports5G=" + supports5G +
                 ", price=" + price +
                 '}';

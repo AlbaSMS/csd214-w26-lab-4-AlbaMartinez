@@ -9,10 +9,10 @@ import java.util.Objects;
 @Entity
 @DiscriminatorValue("LAPTOP")
 public class LaptopEntity extends ElectronicsEntity {
-    @Column(name = "screen_size_inches", nullable = false)
+    @Column(name = "screen_size_inches", nullable = true)
     private double screenSizeInches;
 
-    @Column(name = "price", nullable = false)
+    @Column(name = "price", nullable = true)
     private double price;
 
     public LaptopEntity() {
@@ -56,7 +56,8 @@ public class LaptopEntity extends ElectronicsEntity {
 
     @Override
     public String toString() {
-        return "LaptopEntity{" +
+        return super.toString() +
+                "LaptopEntity{" +
                 "screenSizeInches=" + screenSizeInches +
                 ", price=" + price +
                 '}';
